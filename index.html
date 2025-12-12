@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitals Translator - Your Daily Health Score</title>
+    <meta name="description" content="Transform complex Apple Health data into one simple score. Track HRV, sleep, heart rate, and activity with beautiful insights.">
+    <link rel="canonical" href="https://yourusername.github.io/VitalsTranslator/">
+    <style>
+        :root {
+            --primary: #F5A623;
+            --primary-dark: #E8940F;
+            --text: #1C1C1E;
+            --text-secondary: #6B6B6B;
+            --bg: #FFFFFF;
+            --bg-secondary: #F8F7F5;
+            --accent: #007AFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+        }
+        
+        .app-store-badge img {
+            height: 54px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: var(--bg);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Privacy Section */
+        .privacy-highlight {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .privacy-highlight h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .privacy-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+        
+        .privacy-badge span {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--text);
+            color: #fff;
+        }
+        
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Vitals Translator</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your Health Data,<br><span>Finally Understood</span></h1>
+            <p>Transform complex Apple Health metrics into one simple daily score. Know exactly how your body is doing in seconds.</p>
+            <a href="https://apps.apple.com/app/vitals-translator/idXXXXXXXXX" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Everything You Need</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Daily Vitals Score</h3>
+                    <p>Get a personalized 0-100 score based on your HRV, heart rate, sleep, and activity. Updated every morning.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Plain-English explanations of what your health data means. No medical jargon, just actionable advice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Weekly Reports</h3>
+                    <p>Beautiful visual summaries of your health trends. Share with friends, trainers, or your doctor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⌚</div>
+                    <h3>Apple Watch</h3>
+                    <p>Glance at your vitals score right from your wrist with our elegant watch complications.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>One-Time Purchase</h3>
+                    <p>Pay once, own forever. No subscriptions, no hidden fees. Just $6.99 for lifetime access.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Private</h3>
+                    <p>All processing happens on your device. Your health data never leaves your phone. Ever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy-highlight">
+        <div class="container">
+            <h2>Your Privacy is Our Priority</h2>
+            <p>We believe your health data belongs to you — and only you.</p>
+            <div class="privacy-badges">
+                <div class="privacy-badge">
+                    <span>🔐</span>
+                    <div>On-Device Processing</div>
+                </div>
+                <div class="privacy-badge">
+                    <span>📵</span>
+                    <div>No Cloud Required</div>
+                </div>
+                <div class="privacy-badge">
+                    <span>👤</span>
+                    <div>No Account Needed</div>
+                </div>
+                <div class="privacy-badge">
+                    <span>🚫</span>
+                    <div>No Data Collection</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            <p class="copyright">© 2024 Mubarak Almahmeed. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
