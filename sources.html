@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Sources - Vitals Translator</title>
+    <style>
+        :root {
+            --text: #1C1C1E;
+            --text-secondary: #6B6B6B;
+            --bg: #FFFFFF;
+            --accent: #F5A623;
+            --accent-light: #FFF8E7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .icon {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .source-card {
+            background: #F9F9FB;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #eee;
+        }
+
+        .source-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .source-card .org {
+            font-size: 0.875rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .source-card p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .source-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .source-card a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            background: #FFF3CD;
+            border: 1px solid #FFEEBA;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 40px 0;
+        }
+
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">← Vitals Translator</a>
+        </nav>
+
+        <h1>Medical Sources</h1>
+        <p class="intro">The health insights in Vitals Translator are based on research and guidelines from the
+            following reputable medical organizations and scientific publications.</p>
+
+        <h2><span class="icon">🌙</span> Sleep</h2>
+
+        <div class="source-card">
+            <div class="org">Centers for Disease Control and Prevention (CDC)</div>
+            <h3>How Much Sleep Do I Need?</h3>
+            <p>Adults need 7 or more hours of sleep per night for optimal health. Poor sleep is linked to increased risk
+                of chronic conditions.</p>
+            <a href="https://www.cdc.gov/sleep/about_sleep/how_much_sleep.html" target="_blank" rel="noopener">View
+                Source ↗</a>
+        </div>
+
+        <div class="source-card">
+            <div class="org">National Sleep Foundation</div>
+            <h3>How Much Sleep Do We Really Need?</h3>
+            <p>Adults aged 18-64 need 7-9 hours of sleep per night. Adults 65+ need 7-8 hours. Individual needs may
+                vary.</p>
+            <a href="https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need" target="_blank"
+                rel="noopener">View Source ↗</a>
+        </div>
+
+        <h2><span class="icon">📈</span> Heart Rate Variability (HRV)</h2>
+
+        <div class="source-card">
+            <div class="org">Harvard Health Publishing</div>
+            <h3>Heart Rate Variability: A New Way to Track Well-Being</h3>
+            <p>HRV reflects the balance between the sympathetic and parasympathetic nervous systems and can indicate
+                stress, recovery, and overall health status.</p>
+            <a href="https://www.health.harvard.edu/blog/heart-rate-variability-new-way-track-well-2017112212789"
+                target="_blank" rel="noopener">View Source ↗</a>
+        </div>
+
+        <div class="source-card">
+            <div class="org">European Heart Journal</div>
+            <h3>Heart Rate Variability: Standards of Measurement</h3>
+            <p>Scientific standards for HRV measurement, physiological interpretation, and clinical use established by
+                the Task Force of the European Society of Cardiology.</p>
+            <a href="https://academic.oup.com/eurheartj/article/17/3/354/485572" target="_blank" rel="noopener">View
+                Source ↗</a>
+        </div>
+
+        <h2><span class="icon">❤️</span> Resting Heart Rate</h2>
+
+        <div class="source-card">
+            <div class="org">American Heart Association</div>
+            <h3>All About Heart Rate (Pulse)</h3>
+            <p>A normal resting heart rate for adults ranges from 60 to 100 beats per minute. Generally, a lower heart
+                rate implies better cardiovascular fitness.</p>
+            <a href="https://www.heart.org/en/health-topics/high-blood-pressure/the-facts-about-high-blood-pressure/all-about-heart-rate-pulse"
+                target="_blank" rel="noopener">View Source ↗</a>
+        </div>
+
+        <div class="source-card">
+            <div class="org">Mayo Clinic</div>
+            <h3>Heart Rate: What's Normal?</h3>
+            <p>A well-trained athlete might have a normal resting heart rate closer to 40 bpm. Factors like fitness
+                level, emotions, body size, and medications affect heart rate.</p>
+            <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/expert-answers/heart-rate/faq-20057979"
+                target="_blank" rel="noopener">View Source ↗</a>
+        </div>
+
+        <h2><span class="icon">🏃</span> Physical Activity</h2>
+
+        <div class="source-card">
+            <div class="org">World Health Organization (WHO)</div>
+            <h3>Physical Activity Fact Sheet</h3>
+            <p>Adults should do at least 150-300 minutes of moderate-intensity aerobic physical activity per week, or
+                equivalent vigorous-intensity activity.</p>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank"
+                rel="noopener">View Source ↗</a>
+        </div>
+
+        <div class="source-card">
+            <div class="org">Centers for Disease Control and Prevention (CDC)</div>
+            <h3>Physical Activity Guidelines for Adults</h3>
+            <p>Move more and sit less throughout the day. Some physical activity is better than none. Adults who sit
+                less and do any amount of moderate-to-vigorous physical activity gain health benefits.</p>
+            <a href="https://www.cdc.gov/physicalactivity/basics/adults/index.htm" target="_blank" rel="noopener">View
+                Source ↗</a>
+        </div>
+
+        <div class="disclaimer">
+            <h3>⚠️ Important Medical Disclaimer</h3>
+            <p>Vitals Translator is not a medical device and is not intended to diagnose, treat, cure, or prevent any
+                disease. The information provided is for educational and informational purposes only and should not
+                replace professional medical advice. Always consult with a qualified healthcare provider for medical
+                decisions and advice.</p>
+        </div>
+
+        <footer>
+            <p><a href="index.html">Home</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy
+                    Policy</a> · <a href="terms.html">Terms of Use</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
